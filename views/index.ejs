@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Mini message board</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
+    <div>
+    <div id="window-head">
+      <div class="yellow"></div>
+      <div class="green"></div>
+      <div class="red"></div>
+    </div>
+    <div id="messages-container">
     <% messages.forEach(message => { %>
+      <div class="message-container">
       <h2><%= message.user %></h2>
       <p><%= message.text %></p>
-      <small><%= message.added %></small>
+      <h6> <%= message.added %></h6>
+    </div>
     <% });%>
-    <p>Welcome to <%= title %></p>
+  </div>
+  <div class="form">
+    <form method="POST" action="/new">
+      <div class="textarea">
+      <input value="<%= user %>" type="text" id="user" name="user" autocomplete="off" required>
+      <textarea placeholder="Send a message" type="text" id="text" name="text" autocomplete="off" required></textarea>
+      </div>
+      <button>Send</button>
+    </form>
+  </div>
+  </div>
   </body>
 </html>

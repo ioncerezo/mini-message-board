@@ -1,8 +1,211 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-a {
-  color: #00B7FF;
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto' , Arial, Helvetica, sans-serif;
+
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+
+.message-container{
+  margin-bottom: 25px;
+  width: 350px;
+  
+
+}
+.message-container > h2{
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #282a36
+}
+
+.message-container > p{
+  padding: 6px;
+  width: fit-content;
+  padding: 15px 20px;
+  height: auto;
+  margin: 0;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  border-radius: 0px 7px 7px 7px;
+  background-color: #ebebeb;
+  color: #282a36
+}
+.message-container > h6{
+  margin: 6px 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-left: 10px;
+  color: #44475a
+
+}
+#messages-container{
+  padding: 12px;
+  border-left: 2px solid #282a36;
+  border-right: 2px solid #282a36;
+  width: 60vw;
+  max-width: 800px;
+  min-width: 350px;
+  margin: 0 auto;
+  height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #FDFDFD;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#window-head {
+  width: 60vw;
+  min-width: 350px;
+  max-width: 800px;
+  background-color: #282a36;
+  margin: 0 auto;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+  padding: 10px;
+  padding-right: 15px;
+}
+.yellow {
+  background-color: #f1fa8c;
+}
+.green {
+  background-color: #50fa7b;
+}
+.red {
+  background-color: #ff5555;
+}
+#window-head > div {
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+}
+#window-head > div:hover {
+  background-color: #44475a;
+}
+
+.form {
+  padding: 15px;
+  border: 2px solid #282a36;
+  border-radius: 0 0 10px 10px;
+  width: 60vw;
+  max-width: 800px;
+  min-width: 350px;
+  margin: 0 auto;
+  border-top: 0;
+  background-color: #FDFDFD
+}
+form {
+  margin: 0 auto;
+  display: flex;
+  align-items: end;
+  border: 1px solid #5c5c5c57;
+  background-color:white;
+  border-radius: 5px;
+  padding: 5px;
+  
+} 
+
+.textarea{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 1rem;
+}
+
+#text {
+  height: 60px;
+  width: 100%;
+}
+
+input , textarea{
+  background-color: transparent;
+  border: 0;
+  resize: none;
+  width: max-content;
+  flex: 1;
+  font-size: 0.9rem;
+  color:#44475a;
+}
+
+input {
+  font-weight: 600;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+button {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 15px;
+  color: white;
+  font-size: 0.8rem;
+  background-color: #7F56DA;
+  border: 1px solid #44475a62;
+  border-radius: 3px;
+  font-weight: 800 !important;
+}
+
+button:hover{
+  background-color: #51368a;
 }

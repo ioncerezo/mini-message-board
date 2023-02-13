@@ -1,32 +1,34 @@
 var express = require('express');
 var router = express.Router();
-
+let user = 'Your user name...'
 const messages = [
   {
     text: "Hi there!",
     user: "Amando",
-    added: new Date()
+    added: 'Monday 19:57'
   },
   {
     text: "Hello World!",
     user: "Charles",
-    added: new Date()
+    added: 'Monday 19:57'
   }
 ];
 
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Mini Messageboard", messages: messages });
-
+  res.render('index', { messages: messages , user: user });
 });
 
-router.get('/new', function(req, res, next) {
-  res.render('form');
-});
+
 
 router.post('/new', function(req, res, next) {
-  messages.push({text: req.body.text, user: req.body.user, added: new Date()});
-  res.redirect('/new')
+  let fullDate = new Date()
+  let date =  days[fullDate.getDay()] + ' ' + fullDate.getHours() + ':' + fullDate.getSeconds()
+  messages.unshift({text: req.body.text, user: req.body.user, added: date });
+  user = req.body.user
+  res.redirect('/')
 });
 
 module.exports = router;
