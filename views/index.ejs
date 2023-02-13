@@ -6,7 +6,11 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <h3>holaaa</h3>
+    <% messages.forEach(message => { %>
+      <h2><%= message.user %></h2>
+      <p><%= message.text %></p>
+      <small><%= message.added %></small>
+    <% });%>
     <p>Welcome to <%= title %></p>
   </body>
 </html>
