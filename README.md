@@ -1,7 +1,7 @@
 MINI MESSAGE BOARD
 ========
 
-MINI MESSAGE BOARD es una app de mensajería Full Stack. Contiene un cuadro de chat en la que varías personas pueden escribir a la vez. Los datos se almacenan en una base de datos no relacional.
+Mini Message Board es una app de mensajería Full Stack. Contiene un cuadro de chat en la que varías personas pueden escribir a la vez. Los datos se almacenan en una base de datos no relacional.
 Hecha con fines educativos para practicar NodeJS, Express y MongoDB.
 
 Vista previa del proyecto: https://mini-message-app-ion.fly.dev/
