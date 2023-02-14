@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+
+
+
 let user = 'Your user name...'
 const messages = [
   {
@@ -25,7 +28,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/new', function(req, res, next) {
   let fullDate = new Date()
-  let date =  days[fullDate.getDay()] + ' ' + fullDate.getHours() + ':' + fullDate.getSeconds()
+  let minutes = (fullDate.getMinutes() < 10) ? `0${fullDate.getMinutes()}` : fullDate.getMinutes()
+  let date =  days[fullDate.getDay()] + ' ' + fullDate.getHours() + ':' + minutes
   messages.unshift({text: req.body.text, user: req.body.user, added: date });
   user = req.body.user
   res.redirect('/')
