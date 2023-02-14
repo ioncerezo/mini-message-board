@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
-
-
+const mongoose = require("mongoose");
+mongoose.set('strictQuery', false);
+const mongoDB = "mongodb+srv://admin:admin@cluster0.cybndze.mongodb.net/message-app?retryWrites=true&w=majority";
+// Wait for database to connect, logging an error if there is a problem 
+main().catch(err => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
 
 let user = 'Your user name...'
 const messages = [
